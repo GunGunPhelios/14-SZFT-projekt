@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Másodfokú Egyenlet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    .input-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #eredmeny {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Másodfokú egyenlet összeállítása</h2>
+
+  <div class="input-container">
+    <label for="a">a =</label>
+    <input type="number" id="a" step="any">
+
+    <label for="b">b =</label>
+    <input type="number" id="b" step="any">
+
+    <label for="c">c =</label>
+    <input type="number" id="c" step="any">
+
+    <button onclick="osszeallit()">Nyomd meg!</button>
+  </div>
+
+  <div id="eredmeny"></div>
+
+  <script>
+    function osszeallit() {
+      const a = parseFloat(document.getElementById("a").value);
+      const b = parseFloat(document.getElementById("b").value);
+      const c = parseFloat(document.getElementById("c").value);
+      const eredmenyDiv = document.getElementById("eredmeny");
+
+      if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        eredmenyDiv.innerText = "Kérlek, töltsd ki mindhárom mezőt!";
+        return;
+      }
+
+      if (a === 0) {
+        eredmenyDiv.innerText = "Ez nem másodfokú egyenlet (a ≠ 0)!";
+        return;
+      }
+
+      // Összeállítjuk az egyenletet szöveges formában
+      let egyenlet = "";
+
+      // a tag
+      if (a === 1) egyenlet += "x²";
+      else if (a === -1) egyenlet += "-x²";
+      else egyenlet += `${a}x²`;
+
+      // b tag
+      if (b > 0) egyenlet += ` + ${b}x`;
+      else if (b < 0) egyenlet += ` - ${Math.abs(b)}x`;
+
+      // c tag
+      if (c > 0) egyenlet += ` + ${c}`;
+      else if (c < 0) egyenlet += ` - ${Math.abs(c)}`;
+
+      egyenlet += " = 0";
+
+      eredmenyDiv.innerText = `Egyenlet: ${egyenlet}`;
+    }
+  </script>
+
+</body>
+</html>
