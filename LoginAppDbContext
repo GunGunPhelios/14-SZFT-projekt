@@ -1,0 +1,59 @@
+using LoginSystem.Model;
+using Microsoft.EntityFrameworkCore;
+namespace LoginSystem.Data
+{
+    public class ApplicationDbContext : DbContext
+    {
+
+        public ApplicationDbContext(DbContextOptions options) : base(options)
+        {
+        }
+
+        public DbSet<User> Users { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<User>(e =>
+            {
+                e.ToTable("users");
+
+                e.HasKey(e=> e.Id);
+
+                e.HasIndex(e => e.Email).IsUnique().HasDatabaseName("IX_Users_Email");
+                e.HasIndex(e => e.UserName).IsUnique().HasDatabaseName("IX_Users_UserName");
+                //adatok
+                e.Property(e => e.Id).IsRequired().HasMaxLength(100).HasColumnType("varchar(255)");
+                e.Property(e => e.Email).IsRequired().HasMaxLength(100).HasColumnType("varchar(255)");
+                e.Property(e => e.PasswordHash).IsRequired().HasMaxLength(100).HasColumnType("varchar(100)");
+                e.Property(e => e.Firstname).IsRequired().HasMaxLength(100).HasColumnType("varchar(100)");
+                e.Property(e => e.PhoneNumber).IsRequired().HasMaxLength(100).HasColumnType("varchar(20)");
+                // Szerepkörök
+                e.Property(e => e.Role).IsRequired().HasMaxLength(100).HasColumnType("varchar(50)").HasDefaultValue("User");
+                // Tokenek
+                e.Property(e => e.RefreshToken).IsRequired().HasMaxLength(100).HasColumnType("varchar(500)");
+                e.Property(e => e.EmailConfirmationToken).IsRequired().HasMaxLength(100).HasColumnType("varchar(255)");
+                e.Property(e => e.PasswordResetToken).IsRequired().HasMaxLength(100).HasColumnType("varchar(500)");
+                //időpontok
+                // Idő
+                e.Property(e => e.CreatedAt).HasColumnType("datetime").HasDefaultValueSql("CURRENT_TIMESTAMP");
+                e.Property(e => e.LastLoginAt).HasColumnType("datetime");
+                e.Property(e => e.UpdatedAt).HasColumnType("datetime");
+                e.Property(e => e.RefreshTokenExpiryTime).HasColumnType("datetime");
+                e.Property(e => e.PasswordResetTokenExpiry).HasColumnType("datetime");
+                //Logikai
+                e.Property(e => e.IsActive).HasDefaultValue(true);
+                e.Property(e => e.EmailConfirmed).HasDefaultValue(false);
+
+            });
+        }
+
+
+    }
+}
+
+
+
+
+
