@@ -1,0 +1,14 @@
+C:\Users\Asus2025\Desktop\HalaszSzaboDaniel\Konyvtarkezelo\obj\Debug\net8.0\Konyvtarkezelo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus2025\Desktop\HalaszSzaboDaniel\Konyvtarkezelo\obj\Debug\net8.0\Konyvtarkezelo.AssemblyInfoInputs.cache
+C:\Users\Asus2025\Desktop\HalaszSzaboDaniel\Konyvtarkezelo\obj\Debug\net8.0\Konyvtarkezelo.AssemblyInfo.cs
+C:\Users\Asus2025\Desktop\HalaszSzaboDaniel\Konyvtarkezelo\obj\Debug\net8.0\Konyvtarkezelo.csproj.CoreCompileInputs.cache
+C:\Users\Asus2025\Desktop\HalaszSzaboDaniel\Konyvtarkezelo\bin\Debug\net8.0\Konyvtarkezelo.exe
+C:\Users\Asus2025\Desktop\HalaszSzaboDaniel\Konyvtarkezelo\bin\Debug\net8.0\Konyvtarkezelo.deps.json
+C:\Users\Asus2025\Desktop\HalaszSzaboDaniel\Konyvtarkezelo\bin\Debug\net8.0\Konyvtarkezelo.runtimeconfig.json
+C:\Users\Asus2025\Desktop\HalaszSzaboDaniel\Konyvtarkezelo\bin\Debug\net8.0\Konyvtarkezelo.dll
+C:\Users\Asus2025\Desktop\HalaszSzaboDaniel\Konyvtarkezelo\bin\Debug\net8.0\Konyvtarkezelo.pdb
+C:\Users\Asus2025\Desktop\HalaszSzaboDaniel\Konyvtarkezelo\obj\Debug\net8.0\Konyvtarkezelo.dll
+C:\Users\Asus2025\Desktop\HalaszSzaboDaniel\Konyvtarkezelo\obj\Debug\net8.0\refint\Konyvtarkezelo.dll
+C:\Users\Asus2025\Desktop\HalaszSzaboDaniel\Konyvtarkezelo\obj\Debug\net8.0\Konyvtarkezelo.pdb
+C:\Users\Asus2025\Desktop\HalaszSzaboDaniel\Konyvtarkezelo\obj\Debug\net8.0\Konyvtarkezelo.genruntimeconfig.cache
+C:\Users\Asus2025\Desktop\HalaszSzaboDaniel\Konyvtarkezelo\obj\Debug\net8.0\ref\Konyvtarkezelo.dll
